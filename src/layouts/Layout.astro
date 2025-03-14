@@ -1,0 +1,92 @@
+---
+import "../styles/global.scss";
+
+// Website publisher & region
+const authorPublisher = "Alessandro Zuccaro.";
+const geoRegion = "IT-62";
+
+// SEO title, description and keywords
+const seoTitle = "Alessandro Zuccaro | Backend Developer";
+const seoDescription =
+  "Passionate backend developer focused on creating clean, efficient, and scalable applications with a modern tech stack. Specialized in TypeScript, NestJS, Python and FastAPI. With the flexibility to build small web apps in React when needed.";
+const seoKeywords =
+  "Backend Developer, Alessandro Zuccaro, Rome, Typescript, Python, NestJS, React, Supabase";
+
+// Dublin core
+const dublinCore = {
+  title: "Alessandro Zuccaro",
+  creator: authorPublisher,
+  publisher: authorPublisher,
+  rights: authorPublisher,
+  description: seoDescription,
+  language: "en",
+  type: "Software",
+  format: "text/html",
+};
+---
+
+<!doctype html>
+<html lang="en" class="bg-black text-gray-100 font-mono">
+  <head>
+    <!-- Crawler & Robots -->
+    <meta
+      name="robots"
+      content="index, follow, noodp, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="revisit" content="after 7 days" />
+
+    <!-- Start: Meta-Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Pragma" content="cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- End: Meta-Tags -->
+
+    <!-- Start: Theming and Favicons -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      crossorigin="anonymous"
+      href="/img/logo.png"
+    />
+    <!-- <link rel="alternate icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+        <link rel="alternate icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/img/favicon/site.webmanifest"> -->
+    <!-- End: Theming and Favicons -->
+
+    <!-- Start: Misc meta tags -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={Astro.url} />
+
+    <meta name="geo.region" content={geoRegion} />
+    <meta name="author" content={authorPublisher} />
+    <meta name="publisher" content={authorPublisher} />
+    <meta name="copyright" content={authorPublisher} />
+    <!-- End: Misc meta tags -->
+
+    <!-- Start: Dublin Core (DC) -->
+    <meta name="DC.Title" content={dublinCore.title} />
+    <meta name="DC.Creator" content={dublinCore.creator} />
+    <meta name="DC.Rights" content={dublinCore.rights} />
+    <meta name="DC.Publisher" content={dublinCore.publisher} />
+    <meta name="DC.Description" content={dublinCore.description} />
+    <meta name="DC.Language" content={dublinCore.language} />
+    <meta name="DC.Type" content={dublinCore.type} />
+    <meta name="DC.Format" content={dublinCore.format} />
+    <!-- End: Dublin Core (DC) -->
+
+    <!-- Title & Description -->
+    <title>{seoTitle}</title>
+    <meta name="description" content={seoDescription} />
+    <meta name="abstract" content={seoDescription} />
+    <meta name="keywords" content={seoKeywords} />
+  </head>
+
+  <body class="min-h-[100vh] flex items-center justify-center p-4">
+    <slot />
+  </body>
+</html>
